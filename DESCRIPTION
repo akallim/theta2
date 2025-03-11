@@ -7,5 +7,6 @@ Maintainer: Athanasios Kallimanis <kalliman@bio.auth.gr>
 Description: Calculates the theta and zeta indices as means to quantify the phylogenetic signal of categorical traits. This approach uses the phylogenetic tree as classification tree and quantifies how much can we prune the tree and still accurately predict the trait of interest.    Also, it compares observed values with random expectations using a null model of randomizing the position of species (and their traits) in the tree.
 License: What license is it under?
 Encoding: UTF-8
+Imports: ape
 LazyData: true
 RoxygenNote: 7.2.3
