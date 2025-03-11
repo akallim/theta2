@@ -1,6 +1,6 @@
-library(ape)
-library(phytools)
-library(expm)
+require(ape)
+require(phytools)
+require(expm)
 
 #'Theta and zeta indices for phylogenetic signal
 #'

@@ -22,10 +22,8 @@ The observed values of theta and zeta indices. The values are between 0 and 1, a
 Standardized effect sizes for theta and zeta indices for phylogenetic signal
 }
 \examples{
-tree <- rtree(50)
-cat <- matrix(sample(c(0,1), 200, replace=TRUE), ncol=4, nrow=50)
-cat <-data.frame(cat)
-rownames(cat)<-tree$tip.label
+data(tree)
+data(cat)
 ses_theta(cat, tree, "complete", 500)
 ses_theta(cat, tree, "partial", 500)
 }

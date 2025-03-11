@@ -20,10 +20,8 @@ The values of the theta and zeta indices. The values are between 0 and 1, and th
 Theta and zeta indices for phylogenetic signal
 }
 \examples{
-tree <- rtree(50)
-cat <- matrix(sample(c(0,1), 200, replace=TRUE), ncol=4, nrow=50)
-cat <-data.frame(cat)
-rownames(cat)<-tree$tip.label
+data(tree)
+data(cat)
 theta(cat, tree, "complete")
 theta(cat, tree, "partial")
 }
