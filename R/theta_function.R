@@ -19,7 +19,7 @@ require(expm)
 #'theta(cat, tree, "partial")
 
 theta<-function(cat, tree, matching="complete"){
-
+require(ape)
 if(matching!="partial" & matching!="complete"){
 stop("Matching criterion for trait comparison among species could be only partial or complete")
 }
@@ -118,7 +118,7 @@ return(output)
 ## lighter version for estimating theta and zeta for randomizations
 ## without data checking
 theta2<-function(species, trait, tree, matching){
-
+require(ape)
 original_tree <- tree
 cat<-data.frame(trait)
 rownames(cat)<-species
@@ -210,7 +210,7 @@ return(output)
 #'ses_theta(cat, tree, "partial", 500)
 
 ses_theta<-function(cat, tree, matching="complete", nrep){
-
+require(ape)
 if(matching!="partial" & matching!="complete"){
 stop("Matching criterion for trait comparison among species could be only partial or complete")
 }
