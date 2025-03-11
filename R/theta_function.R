@@ -1,6 +1,6 @@
 require(ape)
-require(phytools)
-require(expm)
+#require(phytools)
+#require(expm)
 
 #'Theta and zeta indices for phylogenetic signal
 #'
@@ -64,7 +64,7 @@ same<-numeric()
 for(j in 1:lg){
 test<-tree$edge[,1]==terminals[j]
 
-if(matching=="partial"){
+if(matching=="partial" & dim(cat)[2]>1){
  if(sum(cat[tree$tip.label[tree$edge[test,2][1]],]*cat[tree$tip.label[tree$edge[test,2][2]],])>0){
    same[count] <- terminals[j]
    count <- count +1
@@ -74,7 +74,7 @@ if(matching=="partial"){
  }
 }
 else{
-if(matching=="complete"){
+if(matching=="complete" | dim(cat)[2]==1){
  if(sum(cat[tree$tip.label[tree$edge[test,2][1]],]==cat[tree$tip.label[tree$edge[test,2][2]],])==length(cat[tree$tip.label[tree$edge[test,2][2]],])){
    same[count] <- terminals[j]
    count <- count +1
@@ -142,7 +142,7 @@ same<-numeric()
 for(j in 1:lg){
 test<-tree$edge[,1]==terminals[j]
 
-if(matching=="partial"){
+if(matching=="partial" & dim(cat)[2]>1){
  if(sum(cat[tree$tip.label[tree$edge[test,2][1]],]*cat[tree$tip.label[tree$edge[test,2][2]],])>0){
    same[count] <- terminals[j]
    count <- count +1
@@ -152,7 +152,7 @@ if(matching=="partial"){
  }
 }
 else{
-if(matching=="complete"){
+if(matching=="complete" | dim(cat)[2]==1){
  if(sum(cat[tree$tip.label[tree$edge[test,2][1]],]==cat[tree$tip.label[tree$edge[test,2][2]],])==length(cat[tree$tip.label[tree$edge[test,2][2]],])){
    same[count] <- terminals[j]
    count <- count +1
